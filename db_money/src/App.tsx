@@ -5,6 +5,9 @@ import Modal from 'react-modal';
 
 
 import { GlobalStyle } from "./styles/global";
+import { NewTransactionModal } from "./components/NewTransactionModal";
+
+Modal.setAppElement('#root');
 
 export function App() {
   // CRIANDO NOSSO MODAL PARA CADASTRO DE NOVA TRANSAÇÃO 
@@ -26,9 +29,7 @@ export function App() {
     <>
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
       <Dashboard/>
-      <Modal isOpen={isNewTransactionModalOpen} onRequestClose={handleCloseNewTransactionModal}>
-        <h2>Modal para criar nova transação</h2>
-      </Modal>
+      <NewTransactionModal isOpen={isNewTransactionModalOpen} onRequestClose={handleCloseNewTransactionModal}/>
       <GlobalStyle />
     </>
   );
